@@ -10,13 +10,16 @@ def random_predict (number: int=1) -> int:
     Returns:
        int: число попыток угадать число
     """
-    minimum = 1
+    
+    #вводим ограничения минимум и максимум для интервала выбора числа
+    minimum = 1 
     maximum = 101
-    count = 0
-    number = np.random.randint(minimum, maximum)
+    count = 0 #вводим переменную, равную 0, для учета числа попыток угадывания
+    number = np.random.randint(minimum, maximum) #выбираем рандомное число из заданного интервала
         
-    while True:
+    while True: #цикл, в рамках которого алгоритм угадывает число
         count+=1
+        #сокращаем число цифр, среди которых ищем искомое число number
         medium = (minimum+maximum) // 2
         if medium > number:
              maximum = medium
@@ -51,5 +54,5 @@ def score_game(random_predict) -> int:
     print(f'Ваш алгоритм угадывает число в среднем за: {score} попыток')
     return(score)
 
-# RUN
+#RUN
 score_game(random_predict)

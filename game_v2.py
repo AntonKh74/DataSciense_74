@@ -39,8 +39,8 @@ def score_game(random_predict) -> int:
     np.random.seed(1) # фиксируем сид для воспроизводимости
     random_array = np.random.randint(1, 101, size=(1000)) # загадали список чисел
 
-    for number in random_array:
-        count_ls.append(random_predict(number))
+    for i in random_array:
+        count_ls.append(random_predict(i))
 
     score = int(np.mean(count_ls)) # находим среднее количество попыток
 
